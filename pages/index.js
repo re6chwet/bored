@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
 import { Stage, Layer, Image as KonvaImage } from 'konva';
 import useImage from 'use-image';
 import Button from '@mui/material/Button';
