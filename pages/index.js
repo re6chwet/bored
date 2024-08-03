@@ -1,5 +1,5 @@
-import { useRef, useState } from 'react';
-import { Stage, Layer, Image as KonvaImage } from 'react-konva';
+import { useRef, useState, useEffect } from 'react';
+import { Stage, Layer, Image as KonvaImage } from 'konva';
 import useImage from 'use-image';
 import Button from '@mui/material/Button';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
@@ -12,18 +12,18 @@ export default function Home() {
   const [effectImage] = useImage('/effect.png');
 
   const addBoredImage = () => {
-    setImages([...images, { id: images.length + 1, src: boredImage }]);
+    setImages([...images, { id: images.length + 1, src: boredImage[0] }]);
   };
 
   const addEffectImage = () => {
-    setImages([...images, { id: images.length + 1, src: effectImage }]);
+    setImages([...images, { id: images.length + 1, src: effectImage[0] }]);
   };
 
   const handleUpload = (event) => {
     const file = event.target.files[0];
     const reader = new FileReader();
     reader.onload = (e) => {
-      const img = new Image();
+      const img = new window.Image();
       img.src = e.target.result;
       img.onload = () => {
         setUploadedImage(img);
@@ -50,7 +50,7 @@ export default function Home() {
   return (
     <div>
       <head>
-        <title>Canvas App</title>
+        <title>$BORED Meme Gen</title>
         <link rel="icon" href="/favicon.ico" />
       </head>
       <div>
