@@ -1,8 +1,8 @@
 import { useRef, useState } from 'react';
-import { Stage, Layer, Image as KonvaImage } from 'konva';
+import { Stage, Layer, Image as KonvaImage } from 'react-konva';
 import useImage from 'use-image';
 import Button from '@mui/material/Button';
-import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 
 export default function Home() {
   const stageRef = useRef(null);
